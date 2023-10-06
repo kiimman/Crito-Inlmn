@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CritoTest", "CritoTest.csproj", "{191DA1D9-1527-45D6-97C7-1EB4ABF6DB09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{191DA1D9-1527-45D6-97C7-1EB4ABF6DB09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191DA1D9-1527-45D6-97C7-1EB4ABF6DB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191DA1D9-1527-45D6-97C7-1EB4ABF6DB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191DA1D9-1527-45D6-97C7-1EB4ABF6DB09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B212BA4-6A82-410B-9504-133C378A9972}
+	EndGlobalSection
+EndGlobal

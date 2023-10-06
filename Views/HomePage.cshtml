@@ -1,0 +1,394 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@{
+	Layout = "LayoutWithShowcase.cshtml";
+}
+
+@await Html.PartialAsync("_BrandSection")
+
+
+<!--feature section-->
+
+    <section class="feature-section">
+        <div class="container">
+            <div class="section-border">
+                <div class="section-title">@Model.Value("serviceFeaturesSectionTitle")</div>
+                <div class="feature-grid">
+                    <div class="feature-learnmore">
+                        <h2>@Model.Value("serviceFeaturesHeading")</h2>
+                        <a class="btn-theme" href="@Model.Value("serviceFeaturesButtonUrl")">@Model.Value("serviceFeaturesButtonText") <i class="fa-arrow-up-right"></i></a>
+                    </div>
+                    
+                    <div class="feature-boxes">
+                        
+                            @Html.GetBlockListHtml(Model.ServiceFeatures)
+                             
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Company-Information-->
+    <section class="about-section">
+        <div class="container">
+            <div class="image-column">
+                @{
+                        var companyPersonImage = Model.Value<MediaWithCrops>("companyPersonImage");
+                        if (companyPersonImage != null)
+                        {
+                            <img src="@companyPersonImage.MediaUrl()" />
+                        }
+                    }
+                    
+                <div class="image-quote">
+                    <h4>@Model.Value("companyPersonName"), <span>@Model.Value("companyPersonTitle")</span></h4>
+                    <p>"@Model.Value("companyPersonDescription")"</p>
+                </div>
+            </div>
+            <div class="content-column">
+                <div class="section-title">About Company</div>
+                <h2>@Model.Value("companyTitle")</h2>
+                <p>@Model.Value("companyDescription")</p>
+                <div class="about-links">
+                    <a class="btn-dark" href="about.html">Learn More <i class="fa-arrow-up-right"></i></a>
+                    <a class="btn-white-play" href="introvideo.html"><i class="fa-regular fa-circle-play mr-2"></i>Intro Video</a>
+                </div>
+            </div>           
+        </div>
+    </section>
+    
+    <!--Company-Service-section-->
+    <section class="service-section">
+        <img class="background-lines-right" src="images/background-lines-right.svg" alt="">
+        <div class="container">
+            <div class="section-title">Our Services</div>
+            <h2>@Model.Value("companyServicesTitle")</h2>
+            <div class="service-boxes">
+                
+                @Html.GetBlockListHtml(Model.CompanyServices)
+                
+            </div>
+
+                
+            <div class="browse-sevices">
+                <a class="btn-dark mt-3" href="#">@Model.Value("companyServicesButtonText") <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Chooseus-Services-section-->
+
+    <section class="chooseus-section">
+        <div class="background-rectangle"></div>
+        <div class="container">
+            <div class="content-column">
+                <div class="section-title">Why Choose Us</div>
+                <h2>@Model.Value("chooseServicesTitle")</h2>
+                <ul>
+                    
+                    @Html.GetBlockListHtml(Model.ChooseServices)
+                    
+                </ul>
+            </div>
+            <div class="image-column">
+                
+                @{
+                        var chooseServicesImage = Model.Value<MediaWithCrops>("chooseServicesImage");
+                        if (chooseServicesImage != null)
+                        {
+                            <img src="@chooseServicesImage.MediaUrl()" />
+                            
+                        }
+                    }
+                    
+                
+            </div>
+        </div>
+    </section>
+    
+    <!--project-Services-section-->
+    <section class="project-section">
+        <div class="container">
+            <div class="section-title">@Model.Value("projectServicesHeading")</div>
+            <h2>Let's look on our Global projects!</h2>
+            <div class="project-grid">
+                <a href="#" class="project">
+                   @{
+                        var projectServicesImage1 = Model.Value<MediaWithCrops>("projectServicesImage1");
+                        if (projectServicesImage1 != null)
+                        {
+                            <img src="@projectServicesImage1.MediaUrl()" />
+                           
+                        }
+                    }
+                    <h5>@Model.Value("projectServicesBoxTitle1")</h5>
+                    <p>Read More<i class="fa-solid fa-arrow-up-right"></i></p>
+                </a>
+                <a href="#" class="project">
+                   @{
+                        var projectServicesImage2 = Model.Value<MediaWithCrops>("projectServicesImage2");
+                        if (projectServicesImage2 != null)
+                        {
+                            <img src="@projectServicesImage2.MediaUrl()" />
+                           
+                        }
+                    }
+                    <h5>@Model.Value("projectServicesBoxTitle2")</h5>
+                    <p>Read More<i class="fa-solid fa-arrow-up-right"></i></p>
+                </a>
+                <a href="#" class="project">
+                   @{
+                        var projectServicesImage3 = Model.Value<MediaWithCrops>("projectServicesImage3");
+                        if (projectServicesImage3 != null)
+                        {
+                            <img src="@projectServicesImage3.MediaUrl()" />
+                           
+                        }
+                    }
+                    <h5>@Model.Value("projectServicesBoxTitle3")</h5>
+                    <p>Read More<i class="fa-solid fa-arrow-up-right"></i></p>
+                </a>
+                <a href="#" class="project">
+                   @{
+                        var projectServicesImage4 = Model.Value<MediaWithCrops>("projectServicesImage4");
+                        if (projectServicesImage4 != null)
+                        {
+                            <img src="@projectServicesImage4.MediaUrl()" />
+                           
+                        }
+                    }
+                    <h5>@Model.Value("projectServicesBoxTitle4")</h5>
+                    <p>Read More<i class="fa-solid fa-arrow-up-right"></i></p>
+                </a>
+            
+              
+               
+                
+            </div>
+            <a class="all-projects-link btn-dark" href="@Model.Value("projectServicesButtonUrl")">@Model.Value("projectServicesButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
+        </div>
+    </section>
+    
+    <!--Team-Features-section-->
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">@Model.Value("teamFeaturesHeading")</div>
+            <div class="browse-team">
+                <h2>@Model.Value("teamFeaturesTitle")</h2>
+                <a class="btn-outline-dark" href="#">@Model.Value("teamFeaturesButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+            <div class="team-members">
+                <div class="member">
+                    @{
+                        var teamFeaturesMemberImage1 = Model.Value<MediaWithCrops>("teamFeaturesMemberImage1");
+                        if (teamFeaturesMemberImage1 != null)
+                        {
+                            <img src="@teamFeaturesMemberImage1.MediaUrl()" />
+                        }
+                    }
+                    <h5>@Model.Value("teamFeaturesMemberName1")</h5>
+                    <p>@Model.Value("teamFeaturesTitle1")</p>
+                </div>
+                <div class="member">
+                    @{
+                        var teamFeaturesMemberImage2 = Model.Value<MediaWithCrops>("teamFeaturesMemberImage2");
+                        if (teamFeaturesMemberImage2 != null)
+                        {
+                            <img src="@teamFeaturesMemberImage2.MediaUrl()" />
+                        }
+                    }
+                    <h5>@Model.Value("teamFeaturesMemberName2")</h5>
+                    <p>@Model.Value("teamFeaturesTitle2")</p>
+                </div>
+                <div class="member">
+                    @{
+                        var teamFeaturesMemberImage3 = Model.Value<MediaWithCrops>("teamFeaturesMemberImage3");
+                        if (teamFeaturesMemberImage3 != null)
+                        {
+                            <img src="@teamFeaturesMemberImage3.MediaUrl()" />
+                        }
+                    }
+                    <h5>@Model.Value("teamFeaturesMemberName3")</h5>
+                    <p>@Model.Value("teamFeaturesTitle3")</p>
+                </div>
+                <div class="member">
+                    @{
+                        var teamFeaturesMemberImage4 = Model.Value<MediaWithCrops>("teamFeaturesMemberImage4");
+                        if (teamFeaturesMemberImage4 != null)
+                        {
+                            <img src="@teamFeaturesMemberImage4.MediaUrl()" />
+                        }
+                    }
+                    <h5>@Model.Value("teamFeaturesMemberName4")</h5>
+                    <p>@Model.Value("teamFeaturesTitle4")</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!--Testimonial-Services-section-->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-border">
+                <div class="section-title">@Model.Value("testimonialServicesHeading")</div>
+                <h2>@Model.Value("testimonialServicesTitle")</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="rating">
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </div>
+                        <p>@Model.Value("testimonialServicesDescription1")</p>
+                        <div class="writer">
+                                @{
+                                    var testimonialServicesClientImage1 = Model.Value<MediaWithCrops>("testimonialServicesClientImage1");
+                                    if (testimonialServicesClientImage1 != null)
+                                    {
+                                        <img src="@testimonialServicesClientImage1.MediaUrl()" />
+                                        
+                                    }
+                                }
+                            
+                            <img src="images/vince-veras-AJIqZDAUD7A-unsplash.jpg">
+                            <h5>@Model.Value("testimonialServicesClientName1")</h5>
+                            <p>@Model.Value("testimonialServicesClientTitle1")</p>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="rating">
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </div>
+                        <p>@Model.Value("testimonialServicesDescription2")</p>
+                        <div class="writer">
+                                @{
+                                    var testimonialServicesClientImage2 = Model.Value<MediaWithCrops>("testimonialServicesClientImage2");
+                                    if (testimonialServicesClientImage2 != null)
+                                    {
+                                        <img src="@testimonialServicesClientImage2.MediaUrl()" />
+                                        
+                                    }
+                                }
+                            
+                            <img src="images/vince-veras-AJIqZDAUD7A-unsplash.jpg">
+                            <h5>@Model.Value("testimonialServicesClientName2")</h5>
+                            <p>@Model.Value("testimonialServicesClientTitle2")</p>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="rating">
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                            <i class="fa-sharp fa-solid fa-star"></i>
+                        </div>
+                        <p>@Model.Value("testimonialServicesDescription1")</p>
+                        <div class="writer">
+                                @{
+                                    var testimonialServicesClientImage3 = Model.Value<MediaWithCrops>("testimonialServicesClientImage3");
+                                    if (testimonialServicesClientImage3 != null)
+                                    {
+                                        <img src="@testimonialServicesClientImage3.MediaUrl()" />
+                                        
+                                    }
+                                }
+                            
+                            <img src="images/vince-veras-AJIqZDAUD7A-unsplash.jpg">
+                            <h5>@Model.Value("testimonialServicesClientName3")</h5>
+                            <p>@Model.Value("testimonialServicesClientTitle3")</p>
+                        </div>
+                    </div>
+                </div>    
+                <a class="btn-dark" href="reviews.html">All Reviews<i class="fa-solid fa-arrow-up-right"></i></a>                             
+            </div>           
+        </div>
+    </section>
+
+<!--article-features-section-->
+    <section class="article-section">
+        <div class="container">
+            <div class="section-title">@Model.Value("articleFeaturesHeading")</div>
+            <div class="browse-news">
+                <h2>@Model.Value("articleFeaturesTitle")</h2>
+                <a class="btn-outline-dark" href="#">@Model.Value("articleFeaturesButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>               
+            </div>
+            <div class="articles">
+                <a href="#" class="article">
+                    <div class="article-date">
+                        <div class="day">25</div>
+                        <div class="month">Mar</div>
+                    </div>
+                    @{
+                        var articleFeaturesImage1 = Model.Value<MediaWithCrops>("articleFeaturesImage1");
+                        if (articleFeaturesImage1 != null)
+                        {
+                            <img src="@articleFeaturesImage1.MediaUrl()" />
+            
+                        }
+                    }
+                    <p class="category">Business</p>
+                    <h5>@Model.Value("articleFeaturesTitle1")</h5>
+                    <p>@Model.Value("articleFeaturesDescription1")</p>
+                </a>
+                <a href="#" class="article">
+                    <div class="article-date">
+                        <div class="day">17</div>
+                        <div class="month">Mar</div>
+                    </div>
+                    @{
+                        var articleFeaturesImage2 = Model.Value<MediaWithCrops>("articleFeaturesImage2");
+                        if (articleFeaturesImage2 != null)
+                        {
+                            <img src="@articleFeaturesImage2.MediaUrl()" />
+                                        
+                        }
+                    }
+                    <p class="category">Business</p>
+                    <h5>@Model.Value("articleFeaturesTitle2")</h5>
+                    <p>@Model.Value("articleFeaturesDescription2")</p>
+                </a>
+                <a href="#" class="article">
+                    <div class="article-date">
+                        <div class="day">13</div>
+                        <div class="month">Mar</div>
+                    </div>
+                    @{
+                        var articleFeaturesImage3 = Model.Value<MediaWithCrops>("articleFeaturesImage3");
+                        if (articleFeaturesImage3 != null)
+                        {
+                            <img src="@articleFeaturesImage3.MediaUrl()" />
+                                        
+                        }
+                    }
+                    <p class="category">Business</p>
+                    <h5>@Model.Value("articleFeaturesTitle3")</h5>
+                    <p>@Model.Value("articleFeaturesDescription3")</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!--newsletter-section-->
+    <section class="newsletter-section">
+        <img class="background-wavy-lines-right" src="images/background-wavy-lines.svg" alt="">
+        <div class="container">
+            <h2>Get News Updates By Signup</h2>
+            <form method="post" action="subscribe-php">
+                <input type="email" placeholder="username@domain.com">
+                <button class="btn-theme">Subscribe <i class="fa-solid fa-arrow-up-right"></i></button>
+            </form>
+        </div>
+    </section>

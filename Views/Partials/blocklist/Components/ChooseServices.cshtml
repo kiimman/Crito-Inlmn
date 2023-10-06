@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ChooseServices)Model.Content;
+    
+}
+
+    <li>
+        <i class="@content.Value("chooseServicesIcon")"></i>
+        <h5>@content.Value("chooseServicesBoxTitle")</h5>
+        <p>@content.Value("chooseServicesBoxDescription")</p>
+    </li>
+ 
